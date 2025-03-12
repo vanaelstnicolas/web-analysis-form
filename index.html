@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <title>Analyse de Page Web</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        const webhookUrls = {
+            test: 'https://n8n-ynxd.onrender.com/webhook-test/analyze-url',
+            production: 'https://n8n-ynxd.onrender.com/webhook/analyze-url'
+        };
+
+        const currentEnvironment = 'production'; // Ou 'test' selon votre besoin
+        const webhookUrl = webhookUrls[currentEnvironment];
+
+        function updateFormAction() {
+            document.getElementById('analyzeForm').action = webhookUrl;
+        }
+
+        window.onload = updateFormAction;
+    </script>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -74,7 +89,7 @@
 <body>
     <div class="container">
         <h2>Analyser une Page Web</h2>
-        <form action="https://n8n-ynxd.onrender.com/webhook/analyze-url" method="POST">
+        <form id="analyzeForm" method="POST">
             <input 
                 type="url" 
                 name="url" 
