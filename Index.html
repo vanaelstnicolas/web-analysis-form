@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analyse de Page Web</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 400px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            text-align: center;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Analyser une URL</h2>
+    <form action="https://n8n-ynxd.onrender.com/webhook-test/analyze-url" method="POST">
+        <input 
+            type="url" 
+            name="url" 
+            placeholder="Entrez l'URL à analyser" 
+            required
+        >
+        <button type="submit">Analyser</button>
+    </form>
+</body>
+</html>
