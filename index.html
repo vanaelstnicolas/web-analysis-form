@@ -9,14 +9,14 @@
             test: 'https://n8n-ynxd.onrender.com/webhook-test/analyze-url',
             production: 'https://n8n-ynxd.onrender.com/webhook/analyze-url'
         };
-
-        const currentEnvironment = 'production'; // Ou 'test' selon votre besoin
+        const currentEnvironment = 'production';
         const webhookUrl = webhookUrls[currentEnvironment];
-
+        
         function updateFormAction() {
+            console.log('Webhook URL:', webhookUrl);
             document.getElementById('analyzeForm').action = webhookUrl;
         }
-
+        
         window.onload = updateFormAction;
     </script>
     <style>
@@ -89,7 +89,7 @@
 <body>
     <div class="container">
         <h2>Analyser une Page Web</h2>
-        <form id="analyzeForm" method="POST">
+        <form id="analyzeForm" method="POST" action="https://n8n-ynxd.onrender.com/webhook/analyze-url">
             <input 
                 type="url" 
                 name="url" 
